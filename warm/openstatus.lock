@@ -1,0 +1,54 @@
+"hono-warm":
+  ID: 6318
+  Monitor:
+    active: true
+    assertions:
+    - compare: eq
+      kind: statusCode
+      target: 200
+    description: Monitoring Hono app on Vercel
+    frequency: 1m
+    kind: http
+    name: Hono Vercel Warm
+    openTelemetry: {}
+    public: true
+    regions:
+    - arn
+    - ams
+    - atl
+    - bog
+    - bom
+    - bos
+    - cdg
+    - den
+    - dfw
+    - ewr
+    - eze
+    - fra
+    - gdl
+    - gig
+    - gru
+    - hkg
+    - iad
+    - jnb
+    - lax
+    - lhr
+    - mad
+    - mia
+    - nrt
+    - ord
+    - otp
+    - phx
+    - scl
+    - sea
+    - sin
+    - sjc
+    - syd
+    - yul
+    - yyz
+    request:
+      headers:
+        User-Agent: OpenStatus
+      method: GET
+      url: https://hono-warm.vercel.app/
+    retry: 3

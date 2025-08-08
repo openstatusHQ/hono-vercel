@@ -1,54 +1,53 @@
 # yaml-language-server: $schema=https://www.openstatus.dev/schema.json
-synthetic-monitor:
-  name: "Hono Vercel Warm"
-  description: "Monitoring Hono app on Vercel"
-  frequency: 1m
+
+"hono-warm":
   active: true
-  regions:
-    - arn
-    - ams
-    - atl
-    - bog
-    - bom
-    - bos
-    - cdg
-    - den
-    - dfw
-    - ewr
-    - eze
-    - fra
-    - gdl
-    - gig
-    - gru
-    - hkg
-    - iad
-    - jnb
-    - lax
-    - lhr
-    - mad
-    - mia
-    - nrt
-    - ord
-    - otp
-    - phx
-    - scl
-    - sea
-    - sin
-    - sjc
-    - syd
-    - yul
-    - yyz
-  retry: 3
+  assertions:
+  - compare: eq
+    kind: statusCode
+    target: 200
+  description: Monitoring Hono app on Vercel
+  frequency: 1m
   kind: http
+  name: Hono Vercel Warm
   public: true
-  degradedAfter: 30000
-  timeout:  45000
+  regions:
+  - arn
+  - ams
+  - atl
+  - bog
+  - bom
+  - bos
+  - cdg
+  - den
+  - dfw
+  - ewr
+  - eze
+  - fra
+  - gdl
+  - gig
+  - gru
+  - hkg
+  - iad
+  - jnb
+  - lax
+  - lhr
+  - mad
+  - mia
+  - nrt
+  - ord
+  - otp
+  - phx
+  - scl
+  - sea
+  - sin
+  - sjc
+  - syd
+  - yul
+  - yyz
   request:
-    url: https://hono-warm.vercel.app/
-    method: GET
     headers:
       User-Agent: OpenStatus
-  assertions:
-    - kind: statusCode
-      compare: eq
-      target: 200
+    method: GET
+    url: https://hono-warm.vercel.app/
+  retry: 3
