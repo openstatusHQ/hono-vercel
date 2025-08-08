@@ -44,7 +44,7 @@ synthetic-monitor:
   timeout:  45000
   public: true
   request:
-    url: https://hono-cold-start-kbxgyslk8-open-status.vercel.app/
+    url: https://hono-cold-start.vercel.app/
     method: GET
     headers:
       User-Agent: OpenStatus

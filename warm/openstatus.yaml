@@ -44,7 +44,7 @@ synthetic-monitor:
   degradedAfter: 30000
   timeout:  45000
   request:
-    url: https://hono-warm-jeoxxlirf-open-status.vercel.app/
+    url: https://hono-warm.vercel.app/
     method: GET
     headers:
       User-Agent: OpenStatus
